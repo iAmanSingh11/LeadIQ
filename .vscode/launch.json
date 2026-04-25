@@ -1,0 +1,18 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Flask API",
+      "type": "python",
+      "request": "launch",
+      "program": "api_server.py",
+      "env": { "FLASK_ENV": "development" }
+    },
+    {
+      "name": "Train Model",
+      "type": "python",
+      "request": "launch",
+      "program": "lead_model.py"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+### Health check
+GET http://localhost:5001/health
+
+### Hot lead prediction
+POST http://localhost:5001/predict
+Content-Type: application/json
+
+{
+  "age": 32,
+  "interactions": 8,
+  "days_since_first": 14,
+  "email_opens": 5,
+  "demo_attended": true,
+  "lead_score": 85,
+  "source": "referral",
+  "company_size": "enterprise"
+}
+
+### Cold lead prediction
+POST http://localhost:5001/predict
+Content-Type: application/json
+
+{
+  "age": 55,
+  "interactions": 1,
+  "days_since_first": 160,
+  "email_opens": 0,
+  "demo_attended": false,
+  "lead_score": 20,
+  "source": "cold",
+  "company_size": "startup"
+}
