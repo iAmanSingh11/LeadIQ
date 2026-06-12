@@ -8,7 +8,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 
-# --- Feature config ---
+
 numeric_cols = ['TotalVisits', 'Total Time Spent on Website', 'Page Views Per Visit']
 categorical_cols = [
     'Lead Origin', 'Lead Source', 'Last Activity',
@@ -17,7 +17,7 @@ categorical_cols = [
 feature_cols = numeric_cols + categorical_cols
 target_col = 'Converted'
 
-# --- Train and save model ---
+
 def train_model():
     print("Training model...")
     df_raw = pd.read_csv('Lead Scoring.csv')
@@ -60,10 +60,10 @@ def train_model():
     with open('models.pkl', 'wb') as f:
         pickle.dump(bundle, f)
 
-    print("✅ Model trained and saved!")
+    print("Model trained and saved!")
     return bundle
 
-# --- Load or train model ---
+
 if os.path.exists('models.pkl'):
     with open('models.pkl', 'rb') as f:
         bundle = pickle.load(f)
@@ -74,10 +74,10 @@ lr = bundle['lr']
 rf = bundle['rf']
 feature_names = bundle['feature_names']
 
-# --- Load data ---
+
 df = pd.read_csv('Lead Scoring.csv')
 
-# --- Prediction function ---
+
 def predict(data):
     row = {feature: 0 for feature in feature_names}
 
